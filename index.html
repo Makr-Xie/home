@@ -1,141 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="https://photos.yuanmu.site/imgs/2024/02/95989e8a0280d62c.png">	//#站点ico
-	<title>Welcome!</title>	//#页面标题
-	<link rel="apple-touch-icon-precomposed" href="images/avatar.bab2b7d4.jpeg">
-	<link rel="stylesheet" type="text/css" href="css/h.9c69ed6c.css">
-	<link rel="stylesheet" type="text/css" href="css/nekotora.99cf6f8c.css">
-	<style>
-        .center {
-            text-align: center;
-        }
-    	</style>
-   	 <style>
-        	.audio-icon {
-          	  position: fixed;
-          	  top: 10px;
-          	  right: 10px;
-           	  width: 50px;
-            	  height: 50px;
-           	 background-image: url('https://photos.yuanmu.site/imgs/2024/02/7c48903c25577993.png');	 //#音乐组件的图标
-           	 background-size: cover;
-          	 cursor: pointer;
-          	  z-index: 9999; //# 确保音频图标位于其他内容之上
-          	animation: none; //# 初始时不播放动画
-     	   }
-       	 	.audio-icon:hover {
-          	  opacity: 0.7; //# 鼠标悬停时降低透明度
-       	 }
-        	.audio-icon.playing {
-        	  animation: rotate 2s linear infinite; //# 播放音频时启动旋转动画 
-       	 }
-        	.audio-icon audio {
-           	  position: absolute;
-          	  opacity: 0;
-        }
-        	audio {
-          	position: absolute;
-            	left: -9999px; //# 将原生音频控件扔到屏幕外
-        }
 
-       	 @keyframes rotate {
-       	     from {
-       	         transform: rotate(0deg);
-      	      }
-      	      to {
-      	          transform: rotate(360deg);
-      	      }
-      	  }
-    	</style>
-<body>
-	<nav>
-		<a href="https://yuanmu.site/" target="_blank" class="active">首页</a>
-		<a class="clip"></a> <a href="https://blog.yuanmu.site/" target="_blank">博客</a>
-	</nav>
-				<div class="background">
-					<canvas id="startrack"></canvas>
-					<div class="cover"></div>
-				</div>
-				<div class="main">
-					<div class="ch intro">
-						<div class="container">
-							<div class="hello">
-								<h1 id="slogan">思考中...</h1>
-								<h2>
-									<div class="circle"> <span></span> <span></span>
-										<span></span>
-									</div>是一只小鼠鼠呀~
-								</h2>
-							</div>
-						</div>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="https://photos.yuanmu.site/imgs/2024/02/95989e8a0280d62c.png">
+		<title>Welcome!</title>
+		<link rel="apple-touch-icon-precomposed" href="images/avatar.bab2b7d4.jpeg">
+		<link rel="stylesheet" type="text/css" href="css/h.9c69ed6c.css">
+		<link rel="stylesheet" type="text/css" href="css/nekotora.99cf6f8c.css">
+		<script async src="https://stats.yuanmu.site/script.js" data-website-id="a9ea6869-0164-455f-84f2-b9601a1e6688"></script>
+		<link rel="preconnect" href="https://photos.yuanmu.site/" crossorigin />
+		<link rel="dns-prefetch" href="https://photos.yuanmu.site/" />
+		<link rel="preconnect" href="https://alist.yuanmu.site/" crossorigin />
+		<link rel="dns-prefetch" href="https://alist.yuanmu.site/" />
+		<link rel="preconnect" href="https://cdn.yuanmu.site/" crossorigin />
+		<link rel="dns-prefetch" href="https://cdn.yuanmu.site/" />
+		<style>
+			.center {
+			            text-align: center;
+			        }
+		</style>
+		<style>
+			.audio-icon {
+			            position: fixed;
+			            top: 10px;
+			            right: 10px;
+			            width: 50px;
+			            height: 50px;
+			            background-image: url('https://photos.yuanmu.site/imgs/2024/02/7c48903c25577993.png'); 
+			            background-size: cover;
+			            cursor: pointer;
+			            z-index: 9999; 
+			            animation: none; 
+			        }
+			        .audio-icon:hover {
+			            opacity: 0.7; 
+			        }
+			        .audio-icon.playing {
+			            animation: rotate 2s linear infinite; 
+			        }
+			        .audio-icon audio {
+			            position: absolute;
+			            opacity: 0;
+			        }
+			        audio {
+			            position: absolute;
+			            left: -9999px; 
+			        }
+			
+			        @keyframes rotate {
+			            from {
+			                transform: rotate(0deg);
+			            }
+			            to {
+			                transform: rotate(360deg);
+			            }
+			        }
+		</style>
+
+	<body>
+		<nav>
+			<a href="https://yuanmu.site/" target="_blank" class="active">首页</a>
+			<a class="clip"></a>
+			<a href="https://blog.yuanmu.site/" target="_blank">博客</a>
+		</nav>
+		<div class="background">
+			<canvas id="startrack"></canvas>
+			<div class="cover"></div>
+		</div>
+		<div class="main">
+			<div class="ch intro">
+				<div class="container">
+					<div class="hello">
+						<h1 id="slogan">思考中...</h1>
+						<h2>
+							<div class="circle">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>是一只小鼠鼠呀~
+						</h2>
 					</div>
-					<div class="ch about">
-						<div class="container">
-							<h2 class="chtitle">Who am <span>I</span>？</h2>
-							<div class="clear">
-								<div class="introduct">
-									<img class="avatar"
-										src="https://photos.yuanmu.site/imgs/2024/02/95989e8a0280d62c.png"> //#这里可以放头像
-									<P style="padding-top:1em;">自由发挥
-									</p> <br>
-									自由发挥
-									<br> <br>
-									<div class="center">
-									<p>
-									    自由发挥
-									</p>
-									<div>> > ></div>
-									<div class="chatbox">
-										<div class="line loading"> <span></span>
-											<span></span> <span></span>
-										</div>
+				</div>
+			</div>
+			<div class="ch about">
+				<div class="container">
+					<h2 class="chtitle">Who am <span>I</span>？</h2>
+					<div class="clear">
+						<div class="introduct">
+							<img class="avatar"
+								 src="https://photos.yuanmu.site/imgs/2024/02/95989e8a0280d62c.png">
+							<P style="padding-top:1em;">你好，这里是小袁同学，20岁，是东北大学一名材料学院的学生啦。
+							</p>
+							<br>
+							但是吧，不务正业热爱计算机互联网事业，对有趣的世界和可能有趣的你充满着好奇...
+							<br>
+							<br>
+							<div class="center">
+								<p>
+									<br>我不慌 星光就在前方
+									<br>
+									别再驻足眺望 背上我的行囊
+									<br>
+									就疯狂 答案都在路上
+									<br>
+									风在自由歌唱 翻山越岭飞翔
+								</p>
+								<div>> > ></div>
+								<div class="chatbox">
+									<div class="line loading">
+										<span></span>
+										<span></span>
+										<span></span>
 									</div>
 								</div>
-								<ul class="skill clear">
-									<li>
-										<p>洞察</p>
-										<div class="progress">
-											<div style="width:60%;"></div>
-											<span>观测世界程度的能力</span>
-										</div>
-									</li>
-									<li>
-										<p>花里胡哨</p>
-										<div class="progress">
-											<div style="width:99%;"></div>
-											<span>脑子里尽是些花里胡哨的玩意</span>
-										</div>
-									</li>
-									<li>
-										<p>魔法</p>
-										<div class="progress">
-											<div style="width:12%;"></div>
-											<span>可能有时有那么一点点</span>
-										</div>
-									</li>
-									<li>
-										<p>恋爱能力</p>
-										<div class="progress">
-											<div style="width:1%;"></div>
-											<span>白纸一张啥也不会QAQ</span>
-										</div>
-									</li>
-								</ul>
 							</div>
+							<ul class="skill clear">
+								<li>
+									<p>洞察</p>
+									<div class="progress">
+										<div style="width:60%;"></div>
+										<span>观测世界程度的能力</span>
+									</div>
+								</li>
+								<li>
+									<p>花里胡哨</p>
+									<div class="progress">
+										<div style="width:99%;"></div>
+										<span>脑子里尽是些花里胡哨的玩意</span>
+									</div>
+								</li>
+								<li>
+									<p>魔法</p>
+									<div class="progress">
+										<div style="width:12%;"></div>
+										<span>可能有时有那么一点点</span>
+									</div>
+								</li>
+								<li>
+									<p>恋爱能力</p>
+									<div class="progress">
+										<div style="width:1%;"></div>
+										<span>白纸一张啥也不会QAQ</span>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<div class="find ch">
+				</div>
+				<div class="find ch">
 					<div class="gate ch">
 						<div class="container links">
-							<h2 class="chtitle">xx同学的<span>可能会</span>出没的地方</h2>
-							<div class="clear"> <a href="https://blog.yuanmu.site/" target="_blank">	//#自定义跳转链接
+							<h2 class="chtitle">小袁同学的<span>可能会</span>出没的地方</h2>
+							<div class="clear">
+								<a href="https://blog.yuanmu.site/" target="_blank">
 									<div class="item">
-										<div class="avatar"> <img
-												src="1.png"> //#自定义图标
+										<div class="avatar">
+											<img
+												 src="https://blog.yuanmu.site/upload/11%20(17).png">
 										</div>
 										<div class="inner">
 											<h5>小鼠鼠的杂货店~</h5>
@@ -143,12 +167,12 @@
 										</div>
 									</div>
 								</a>
-
-								<a href="https://space.bilibili.com/"
-									target="_blank">
+								<a href="https://space.bilibili.com/521340130"
+								   target="_blank">
 									<div class="item">
-										<div class="avatar"> <img
-												src="https://photos.yuanmu.site/imgs/2024/02/fc53f24ddf166f4c.png">
+										<div class="avatar">
+											<img
+												 src="https://photos.yuanmu.site/imgs/2024/02/fc53f24ddf166f4c.png">
 										</div>
 										<div class="inner">
 											<h5>BiliBili</h5>
@@ -158,17 +182,20 @@
 								</a>
 								<a href="https://alist.yuanmu.site/" target="_blank">
 									<div class="item">
-										<div class="avatar"> <img src="https://photos.yuanmu.site/imgs/2024/02/581123f5d67e78f9.png"> </div>
+										<div class="avatar">
+											<img src="https://photos.yuanmu.site/imgs/2024/02/581123f5d67e78f9.png">
+										</div>
 										<div class="inner">
 											<h5>Alist</h5>
 											<p>放着一些好东西~</p>
 										</div>
 									</div>
 								</a>
-
-								<a href="https://music.163.com/#/user/home?id=" target="_blank">
+								<a href="https://music.163.com/#/user/home?id=8142746530" target="_blank">
 									<div class="item">
-										<div class="avatar"> <img src="https://photos.yuanmu.site/imgs/2024/02/ac5eede603701fdc.png"> </div>
+										<div class="avatar">
+											<img src="https://photos.yuanmu.site/imgs/2024/02/ac5eede603701fdc.png">
+										</div>
 										<div class="inner">
 											<h5>网易云</h5>
 											<p>啊对，也有可能在听歌~</p>
@@ -184,31 +211,29 @@
 					<div class="container">
 						<h3>是一只小鼠鼠啊~</h3>
 						<p>木槿昔年，浮生未歇~</p>
-						<p class="c"><a href="/" target="_blank">Say hello to me @ Yuan Mu</a>
+						<p class="c">
+							<a href="/" target="_blank">Say hello to me @ Yuan Mu</a>
 					</div>
 				</div>
 				<script src="js/page.3a0791a3.js"></script>
-				<script type="text/javascript" src="js/stats.js" charset="UTF-8">
-				</script>
-</div>
-    <div class="audio-icon" onclick="toggleAudio()">
-    </div>
-    <audio id="background-music" src="https://alist.yuanmu.site/d/onedrive/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2%E5%90%88%E9%9B%86/%E9%9F%B3%E9%A2%91/%E3%80%90Animenz%E3%80%91secret%20base%20%E3%80%9C%E4%BD%A0%E7%BB%99%E6%88%91%E7%9A%84%E6%89%80%E6%9C%89%E3%80%9C%20-%20%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D%20ED%20%E9%92%A2%E7%90%B4%E7%89%88.mp3?sign=u7MsfuSsRYURztRCtWSbYDr-jU9Fp1AWIBp4Bm4mtK0=:0" controls autoplay loop>
-        Your browser does not support the audio element.	//#这里放音乐文件地址
-    </audio>
-    <script>
-        function toggleAudio() {
-            var audioIcon = document.querySelector('.audio-icon');
-            var audio = document.getElementById('background-music');
-            if (audio.paused) {
-                audio.play();
-                audioIcon.classList.add('playing');
-            } else {
-                audio.pause();
-                audioIcon.classList.remove('playing');
-            }
-        }
-    </script>
-    <div>
-</body>
+			</div>
+			<div class="audio-icon" onclick="toggleAudio()"></div>
+			<audio id="background-music" src="https://alist.yuanmu.site/d/onedrive/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2%E5%90%88%E9%9B%86/%E9%9F%B3%E9%A2%91/%E3%80%90Animenz%E3%80%91secret%20base%20%E3%80%9C%E4%BD%A0%E7%BB%99%E6%88%91%E7%9A%84%E6%89%80%E6%9C%89%E3%80%9C%20-%20%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D%20ED%20%E9%92%A2%E7%90%B4%E7%89%88.mp3?sign=u7MsfuSsRYURztRCtWSbYDr-jU9Fp1AWIBp4Bm4mtK0=:0" controls autoplay loop>
+				Your browser does not support the audio element.
+			</audio>
+			<script>
+				function toggleAudio() {
+				            var audioIcon = document.querySelector('.audio-icon');
+				            var audio = document.getElementById('background-music');
+				            if (audio.paused) {
+				                audio.play();
+				                audioIcon.classList.add('playing');
+				            } else {
+				                audio.pause();
+				                audioIcon.classList.remove('playing');
+				            }
+				        }
+			</script>
+			<div>
+	</body>
 </html>
