@@ -89,6 +89,10 @@
     content: "\f16d"
 }
 
+.icon-linkedIn:before {
+    content: "\f472"
+}
+
 .icon-weibo:before {
     content: "\f18a"
 }

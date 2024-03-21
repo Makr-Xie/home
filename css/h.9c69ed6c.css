@@ -178,7 +178,7 @@ nav a:hover {
 
 .ch h2.chtitle {
     padding-bottom: 30px;
-    font-size: 26px;
+    font-size: 32px;
     letter-spacing: .2em;
     color: hsla(0, 0%, 100%, .5)
 }
@@ -316,12 +316,13 @@ nav a:hover {
 }
 
 .about .introduct {
-    line-height: 2em
+    line-height: 2em;
+    font-size: 16px;
 }
 
 .about .introduct img.avatar {
     float: right;
-    width: 140px;
+    width: 180px;
     margin-left: 40px;
     margin-right: 20px;
     border-radius: 100%
