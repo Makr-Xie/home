@@ -322,7 +322,7 @@ nav a:hover {
 
 .about .introduct img.avatar {
     float: right;
-    width: 180px;
+    width: 230px;
     margin-left: 40px;
     margin-right: 20px;
     border-radius: 100%
@@ -378,7 +378,7 @@ nav a:hover {
 
 ul.skill li .progress div {
     animation: progressin 7s;
-    -webkit-animation: progressin 7s;
+    -webkit-animation: progressin 5s;
     -ms-animation: progressin 7s;
     -moz-animation: progressin 7s
 }
@@ -837,5 +837,7 @@ ul.skill li .progress div {
         letter-spacing: .2em
     }
 }
+
+
 
 /*# sourceMappingURL=/h.9c69ed6c.css.map */
