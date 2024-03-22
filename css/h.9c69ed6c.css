@@ -244,6 +244,33 @@ nav a:hover {
     }
 }
 
+.cv h1 {
+    line-height: 2;
+    text-align: center;
+    font-size: xx-large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.cv h2 {
+    font-size: x-large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cv strong {
+    font-size: large;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.cv p {
+    height: auto;
+    font-size: medium;
+}
+
+
+.cv li {
+    margin-left: 20px;
+}
+
 .container {
     position: relative;
     width: 1000px;
